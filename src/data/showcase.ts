@@ -8,23 +8,24 @@ export interface ShowcaseItem {
 
 export const showcase: ShowcaseItem[] = [
 	{
-		name: "Sample Project",
-		href: "https://github.com/example/sample",
-		stack: "TypeScript · CLI",
+		name: "Simone",
+		href: "https://github.com/rajtilakjee/simone",
+		stack: "Python · CLI",
 		badge: "OSS",
-		desc: "A short, plain description of what the project does and why it's interesting. One or two sentences is plenty — keep the prose tight so the row stays scannable.",
+		desc: "A Python CLI-script that helps you create blog posts from your videos. It also adds context-aware screenshots from that video..",
 	},
 	{
-		name: "Another Thing",
-		href: "https://example.com",
-		stack: "Web App · Realtime",
-		badge: "Live",
-		desc: "Use the badge slot for a status hint — installs, stars, version, or just an OSS / Closed marker. Leave the field undefined and the badge disappears.",
+		name: "KeepYourMouthShut",
+		href: "https://github.com/rajtilakjee/keepyourmouthshut",
+		stack: "Web App · Python",
+		badge: "OSS",
+		desc: "An AI-assisted open-source app that provides a 360-degree podcast solution. It has a developer-first approach for creating entire episodes of podcasts without requiring any expensive equpment or setup. The app takes a number of input from the end-user and based on that generates a script and an audio voice-over file based on that script.",
 	},
 	{
-		name: "Research Note",
-		href: "https://github.com/example/paper",
-		stack: "Python · Algorithms",
-		desc: "Showcase entries don't have to be products — a write-up, a paper repo, a one-off experiment all fit. The list is rendered in order; reorder to taste.",
+		name: "Kivo",
+		href: "https://github.com/rajtilakjee/kivo",
+		stack: "Python · Productivity",
+    badge: "OSS",
+		desc: "A lightweight desktop teleprompter built with PySide6. Kivo provides a clean, always-on-top reading overlay for scripts, AI-generated content, presentations, and video recordings.",
 	},
 ];
