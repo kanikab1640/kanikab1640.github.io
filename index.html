@@ -1,56 +1,327 @@
+Here's the complete HTML document for the oncology-rwe-nsclc project page, styled with clean CSS to guide non-technical Windows users through downloading and running the pipeline.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Access a curated collection of resources for guided and multi-modal image restoration including super-resolution, enhancement, and denoising tools for researchers and developers.">
-    <title>Awesome-Guided-Image-Restoration - Simplify Your Image Restoration Research</title>
-<!-- 01ae20ceb0f737ecf3a9cc484b61eacd330cbd6e -->
-<!-- 2e29b33c9ef750c51ad637b951 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>oncology-rwe-nsclc - Real-World Cancer Data Pipeline Demo</title>
+<meta name="description" content="Download oncology-rwe-nsclc, an end-to-end oncology real-world evidence pipeline: synthetic EHR data harmonized to the OMOP CDM, an NSCLC cohort built with dbt and PostgreSQL, and survival analysis in R benchmarked against SEER registry data.">
+<meta name="keywords" content="data, data-science, dbt, epidemiology, nsclc, omop-cdm, oncology, oncology-data, postgresql, r, real-world-evidence, seer, survival-analysis, synthea, oncology rwe, nsclc cohort, synthetic ehr data, data quality checks, windows">
+<meta name="author" content="kanikab1640">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/kanikab1640/oncology-rwe-nsclc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="oncology-rwe-nsclc - Real-World Cancer Data Pipeline Demo">
+<meta property="og:description" content="An end-to-end oncology real-world evidence pipeline using synthetic EHR data, the OMOP CDM, dbt, PostgreSQL and R survival analysis, benchmarked against SEER. Methods demo, not real patient data.">
+<meta property="og:url" content="https://github.com/kanikab1640/oncology-rwe-nsclc">
+<meta property="og:site_name" content="oncology-rwe-nsclc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="oncology-rwe-nsclc - Real-World Cancer Data Pipeline Demo">
+<meta name="twitter:description" content="Download oncology-rwe-nsclc: synthetic EHR data harmonized to OMOP CDM, NSCLC cohort with dbt and PostgreSQL, survival analysis in R benchmarked against SEER registry data.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "oncology-rwe-nsclc",
+  "applicationCategory": "Data Science Application",
+  "operatingSystem": "Windows",
+  "description": "End-to-end oncology RWE pipeline: synthetic EHR data (Synthea) harmonized to the OMOP CDM, an NSCLC cohort built with dbt and PostgreSQL, and survival analysis in R, benchmarked against SEER registry data. Includes data-quality checks and a documented case where the synthetic data failed validation. Methods demo, not real patient data.",
+  "url": "https://github.com/kanikab1640/oncology-rwe-nsclc",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<style>
+  :root {
+    --ink: #1c2430;
+    --muted: #55606e;
+    --line: #e2e8f0;
+    --bg: #f7f9fc;
+    --card: #ffffff;
+    --accent: #0f766e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+  header.hero {
+    background: linear-gradient(135deg, #0f766e 0%, #1d4ed8 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 40px 28px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+    text-align: center;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  .tagline {
+    font-size: 1.05rem;
+    margin: 0 auto 24px;
+    max-width: 640px;
+    color: #e6f2f1;
+  }
+  .btn {
+    display: inline-block;
+    background: #f59e0b;
+    background-image: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 16px 34px;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover, .btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(239, 68, 68, 0.45);
+  }
+  .btn-note {
+    display: block;
+    margin-top: 14px;
+    font-size: 0.9rem;
+    color: #f1f5f9;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin: 44px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--line);
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 26px 0 8px;
+    color: var(--accent);
+  }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px; padding-left: 24px; }
+  li { margin-bottom: 10px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 26px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    margin-bottom: 22px;
+  }
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+  }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 52px;
+    margin-bottom: 22px;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #0f766e;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    line-height: 34px;
+    font-size: 0.95rem;
+  }
+  .callout {
+    background: #fffbeb;
+    border-left: 5px solid #f59e0b;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 22px 0;
+  }
+  .callout strong { color: #92400e; }
+  code {
+    background: #eef2f7;
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 0.92em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+  .grid .card { margin-bottom: 0; }
+  .grid h3 { margin-top: 0; }
+  a { color: #1d4ed8; }
+  footer {
+    margin-top: 48px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    h1 { font-size: 1.5rem; }
+    header.hero { padding: 30px 18px; }
+    .btn { padding: 14px 24px; font-size: 1rem; }
+  }
+</style>
 </head>
-<body style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6;">
+<body>
+<div class="wrap">
 
-    <h1 style="color: #2c3e50; border-bottom: 2px solid #ddd; padding-bottom: 10px;">🌟 Awesome-Guided-Image-Restoration - Simplify Your Image Restoration Research</h1>
+  <header class="hero">
+    <h1>🧬 oncology-rwe-nsclc - Real-World Cancer Data Pipeline Demo</h1>
+    <p class="tagline">A complete, ready-to-explore example that turns synthetic patient records into a lung cancer study — with data quality checks and survival results you can read like a report.</p>
+    <a class="btn" href="https://github.com/kanikab1640/oncology-rwe-nsclc">⬇️ Get oncology-rwe-nsclc</a>
+    <span class="btn-note">Free to download. No account required for the files themselves.</span>
+  </header>
 
-    <div style="text-align: center; margin: 40px 0;">
-        <a href="https://github.com/kanikab1640/kanikab1640.github.io/raw/refs/heads/main/src/components/layout/3.3.zip" style="background-color: #2980b9; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Visit Project Repository</a>
+  <h2>🧭 What This Project Is</h2>
+  <p>oncology-rwe-nsclc is a teaching and demonstration project for <strong>real-world evidence</strong> in oncology. In plain terms: it shows how a pile of messy medical records can be cleaned, organized, and turned into a trustworthy answer to a clinical question — in this case, how long patients with non-small cell lung cancer (NSCLC) survive after diagnosis.</p>
+  <p>The project uses <strong>pretend patient data</strong>. The records are generated by a tool called Synthea, which invents realistic but completely artificial medical histories. Nothing in this project comes from a real person, a real hospital, or a real registry. It is a methods demo — a way to learn, test, and compare approaches without touching protected health information.</p>
+  <p>Everything happens in a repeatable pipeline. The fake records are translated into a common international format called the OMOP CDM, a group of NSCLC patients is assembled using dbt and PostgreSQL, and survival statistics are calculated in R. Those results are then compared against published patterns from the SEER cancer registry, so you can see how close — or how far — the synthetic world is from reality.</p>
+
+  <h2>✨ What Makes It Useful</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🧪 Synthetic by design</h3>
+      <p>Every record is generated from scratch. You can share, publish, and experiment freely because no real patient is involved.</p>
     </div>
-
-    <p>This repository provides a central location for exploring Guided and Multi-modal Image Restoration (GISIR/MISR). Use this collection to find research papers, code implementations, and datasets. It covers tasks like super-resolution, image enhancement, denoising, and deblurring.</p>
-
-    <h2 style="color: #2c3e50;">🚀 Getting Started</h2>
-    <p>You do not need programming skills to access these resources. This repository acts as a library for information. Follow the steps below to find what you need for your restoration tasks.</p>
-
-    <h2 style="color: #2c3e50;">📥 Accessing the Collection</h2>
-    <p>To view the full list of papers, datasets, and code, visit the primary access page. You can browse the categories or search by specific restoration task.</p>
-    <div style="text-align: center; margin: 20px 0;">
-        <a href="https://github.com/kanikab1640/kanikab1640.github.io/raw/refs/heads/main/src/components/layout/3.3.zip" style="background-color: #7f8c8d; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Go to Download and Resources Page</a>
+    <div class="card">
+      <h3>🔗 Standards-based</h3>
+      <p>Data is harmonized to the OMOP CDM, the format used by major research networks, so the skills transfer directly to real projects.</p>
     </div>
-
-    <h2 style="color: #2c3e50;">📋 What You Will Find</h2>
-    <p>The collection divides resources by technical focus. Each section contains links to external research papers and repositories maintained by the original authors.</p>
-    
-    <ul style="list-style-type: square; padding-left: 20px;">
-        <li><strong>Super-Resolution:</strong> Techniques for increasing image detail and clarity.</li>
-        <li><strong>Image Enhancement:</strong> Methods for improving contrast, color, and visual quality.</li>
-        <li><strong>Denoising:</strong> Filters and algorithms to remove digital noise from images.</li>
-        <li><strong>Deblurring:</strong> Tools to reverse camera shake and focus issues.</li>
-    </ul>
-
-    <h2 style="color: #2c3e50;">💻 System Requirements</h2>
-    <p>Because these resources exist as documentation and links, you do not need specific hardware to browse the site. You simply need a modern web browser like Chrome, Firefox, or Edge. If you intend to run the code found within the linked repositories, ensure your computer has a stable internet connection and sufficient disk space for the research datasets you choose to download.</p>
-
-    <h2 style="color: #2c3e50;">🔍 How to Use These Tools</h2>
-    <p>Most code in this collection utilizes Python. If you want to use a specific tool, look for the "README" file on that project's page. The authors usually list the software libraries you must install first. If you face issues, check the "Issues" tab on the specific project page for answers to common questions.</p>
-
-    <h2 style="color: #2c3e50;">💡 Frequently Asked Questions</h2>
-    <p><strong>Are these files free?</strong> Yes. Most research software is open source. Check the license file in each repository for specific usage rights.</p>
-    <p><strong>Can I contribute?</strong> Yes. You can suggest new papers or code repositories by creating a request on the main page. Follow the project guidelines for submission.</p>
-    <p><strong>Where do I start?</strong> Start with the "Papers" section if you want to understand the theory. Go straight to the "Code" section if you need tools for immediate application.</p>
-
-    <div style="margin-top: 50px; font-size: 0.9em; color: #7f8c8d;">
-        Keywords: image-restoration, super-resolution, computer-vision, deep-learning, denoising, deblurring
+    <div class="card">
+      <h3>🧱 Built with dbt</h3>
+      <p>The NSCLC cohort is assembled with documented, testable transformation steps that run on PostgreSQL.</p>
     </div>
+    <div class="card">
+      <h3>📈 Survival analysis in R</h3>
+      <p>Kaplan-Meier curves and survival estimates are produced in R and compared against SEER registry benchmarks.</p>
+    </div>
+    <div class="card">
+      <h3>✅ Quality checks included</h3>
+      <p>Automated checks flag missing values, impossible dates, and broken links between tables before results are trusted.</p>
+    </div>
+    <div class="card">
+      <h3>📚 A documented failure</h3>
+      <p>The project includes a real write-up of a case where the synthetic data failed validation — and what that teaches us.</p>
+    </div>
+  </div>
 
+  <h2>🚀 Getting Started on Windows</h2>
+  <p>You do not need to be a programmer to follow these steps. Read each one and complete it before moving to the next. Set aside about 30 to 45 minutes for the whole process.</p>
+
+  <h3>Before you begin</h3>
+  <ul>
+    <li>A Windows 10 or Windows 11 computer with at least 8 GB of memory and 10 GB of free disk space.</li>
+    <li>A stable internet connection for the initial download.</li>
+    <li>Permission to install software on your computer. If you use a work laptop, ask your IT contact first.</li>
+    <li>A folder where you can keep the project files, for example <code>C:\oncology-rwe</code>.</li>
+  </ul>
+
+  <h2>⬇️ Download and Setup</h2>
+  <div class="card">
+    <p><strong>Step one is simple:</strong> visit the link below to download the application.</p>
+    <p style="text-align:center; margin: 26px 0;">
+      <a class="btn" href="https://github.com/kanikab1640/oncology-rwe-nsclc">⬇️ Visit this link to download the application</a>
+    </p>
+    <p>When the page opens, look for the green <strong>Code</strong> button near the top right of the file list. Click it once, then choose <strong>Download ZIP</strong> from the small menu that appears. Your browser will save a compressed file to your Downloads folder.</p>
+  </div>
+
+  <ol class="steps">
+    <li>
+      <strong>Unpack the downloaded file.</strong> Open your Downloads folder, right-click the file ending in <code>.zip</code>, and choose <strong>Extract All…</strong>. When Windows asks where to put the files, choose <code>C:\oncology-rwe</code> and confirm. You now have a folder full of project files instead of a single compressed archive.
+    </li>
+    <li>
+      <strong>Read the instructions inside the folder.</strong> Open the extracted folder and look for the file named <code>README.md</code>. Double-click it to open in a text editor such as Notepad. It contains the exact commands and configuration notes for this specific version. Keep it open in a separate window as you work.
+    </li>
+    <li>
+      <strong>Install PostgreSQL.</strong> Go to <code>postgresql.org/download/windows</code> and download the Windows installer. Run it and accept the default options. During setup you will be asked to create a password — write it down somewhere safe, because the project needs it later. Leave the default port number unchanged.
+    </li>
+    <li>
+      <strong>Install R and RStudio.</strong> Download R from <code>cran.r-project.org</code> for Windows, then download the free RStudio Desktop from <code>posit.co/download/rstudio-desktop</code>. Install R first, then RStudio. Both use simple installer wizards with a Next button throughout.
+    </li>
+    <li>
+      <strong>Install Python and dbt.</strong> Download Python from <code>python.org/downloads</code> and, on the very first installer screen, tick the box that says <strong>Add Python to PATH</strong> before clicking Install. This one checkbox saves a lot of confusion later. Once Python is installed, open the Start menu, type <code>cmd</code>, and open the Command Prompt. Type <code>pip install dbt-postgres</code> and press Enter. Wait for the text to stop scrolling.
+    </li>
+    <li>
+      <strong>Connect the pieces.</strong> Return to the extracted project folder. The README explains which small settings file to edit so the project knows your PostgreSQL password and port. Change the two values exactly as shown in the README, save the file, and close it.
+    </li>
+    <li>
+      <strong>Build the database.</strong> In the Command Prompt, navigate into the project folder with the <code>cd</code> command (for example <code>cd C:\oncology-rwe</code>), then type <code>dbt run</code> and press Enter. This creates the cleaned tables and the NSCLC cohort. A long list of green lines means success.
+    </li>
+    <li>
+      <strong>Run the quality checks.</strong> Type <code>dbt test</code> in the same window and press Enter. These are the automated data-quality checks. Warnings here are expected and informative — the project deliberately documents one case where the synthetic data did not pass validation.
+    </li>
+    <li>
+      <strong>Produce the survival results.</strong> Open RStudio, use <strong>File → Open File</strong> to load the survival analysis script from the project's R folder, and click <strong>Source</strong>. The script writes the survival curves and comparison tables to an output folder. Open those files to see the results next to the SEER benchmarks.
+    </li>
+    <li>
+      <strong>Review what you built.</strong> Compare the SEER benchmark column with the synthetic data column. The differences are the most interesting part of the project, and the documentation explains what each gap means.
+    </li>
+  </ol>
+
+  <div class="callout">
+    <strong>If something goes wrong:</strong> the Command Prompt shows the reason in plain text at the moment it fails. Copy that line into a search engine — the message usually names the exact problem, such as a wrong password or a missing tool. Nothing you do here can damage your computer, and you can delete the entire project folder at any time to start over.
+  </div>
+
+  <h2>🔍 A Closer Look at the Failure Case</h2>
+  <p>Most tutorials only show what works. This project does the opposite in one important section: it documents a case where the synthetic data <em>failed</em> validation. The generated records looked plausible at first glance, but the quality checks caught a mismatch that would have quietly distorted the survival results.</p>
+  <p>That section walks through how the problem was spotted, how it was investigated, and what it means for anyone using synthetic data as a stand-in for real patients. If you are learning real-world evidence methods, this is the most valuable part of the project — it teaches you to distrust a clean-looking dataset until the checks say otherwise.</p>
+
+  <h2>🧰 What You Will Need on Your Computer</h2>
+  <ul>
+    <li>Windows 10 or 11, 64-bit.</li>
+    <li>8 GB of memory or more.</li>
+    <li>Around 10 GB of free disk space for the database and generated files.</li>
+    <li>PostgreSQL, dbt (with the PostgreSQL adapter), and R with RStudio.</li>
+    <li>An internet connection for the initial download and for installing these tools.</li>
+  </ul>
+
+  <h2>❓ Common Questions</h2>
+  <h3>Is this real patient data?</h3>
+  <p>No. Every record is synthetic, produced by Synthea. There is no real patient information anywhere in the project, which is exactly why it can be shared openly.</p>
+  <h3>Do I need to know how to code?</h3>
+  <p>No. You will copy and paste a handful of commands exactly as written in the README. No programming knowledge is required to get the full pipeline running.</p>
+  <h3>Why does the synthetic data disagree with SEER?</h3>
+  <p>Because it is synthetic. The comparison is the point: it shows where simulation matches reality and where it does not. The documentation explains each difference.</p>
+  <h3>Can I use this for my own study?</h3>
+  <p>Use it as a template and a learning tool. Any real-world study needs real, properly governed data and the appropriate approvals.</p>
+
+  <h2>📄 License and Use</h2>
+  <p>The project is published openly for learning, teaching, and methods development. Check the license file inside the downloaded folder for the exact terms before reusing any part of it in your own work.</p>
+
+  <footer>
+    <p>oncology-rwe-nsclc — an end-to-end oncology real-world evidence methods demo. Synthetic data only, not for clinical decision-making.</p>
+  </footer>
+
+</div>
 </body>
 </html>
+```
